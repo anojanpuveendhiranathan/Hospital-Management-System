@@ -33,7 +33,7 @@ class HospitalApplicationTests {
 
 	@Test
 	public void testEachDocById() {
-		Doctor doc = doctorRepository.findById(5L).get();
+		Doctor doc = doctorRepository.findById(5).get();
 		assertEquals(5, doc.getId());
 	}
 

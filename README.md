@@ -1,169 +1,95 @@
-# 🏥 Hospital Management System
+# 🏥 Hospital Management System — Frontend Setup
 
-The **Hospital Management System (HMS)** is designed to digitalize hospital operations such as doctor management, patient registration, appointment scheduling, and staff coordination.
-It provides a centralized platform for administrators, doctors, and patients — improving **efficiency, transparency, and communication** within the hospital.
-
----
-
-## ⚙️ Current Features
-
-### 1. Add Doctor
-
-- Allows admins to register new doctors with details like name, specialization, contact, and experience.
-- Data is stored in the database for future retrieval or search.
-
-**Possible Improvements**
-
-- Add edit/delete options for doctor records
-- Validate inputs (avoid duplicate emails/phones)
-- Include profile photo and specialization field
-
-**Benefits**
-
-- Keeps doctor records organized
-- Simplifies onboarding of new doctors
+This guide provides step-by-step instructions to set up and run the **Angular frontend** of the Hospital Management System project.
 
 ---
 
-### 2. View / Search Doctors
+## ⚙️ Prerequisites
 
-- Displays all registered doctors
-- Allows search by name or specialization
-
-**Possible Improvements**
-
-- Add filters (experience, category, operations)
-- Sorting and pagination for large data sets
-
-**Benefits**
-
-- Easy access to doctor details
-- Faster decision-making for admins/patients
+- Node.js (LTS version)
+- npm (comes with Node.js)
+- Angular CLI v17 or later
 
 ---
 
-### 3. Add Patient
+## 🚀 Setup Steps
 
-- Enables staff to register new patients with basic details like name, age, gender, and contact.
+### Step 1: Install Node.js
 
-**Possible Improvements**
-
-- Add fields for disease, assigned doctor, and admission date
-- Prevent duplicate entries
-- Allow uploading reports or prescriptions
-
-**Benefits**
-
-- Keeps patient data digital and accessible
-- Reduces paperwork and manual errors
+Download and install the **LTS version** of Node.js from:
+👉 [https://nodejs.org/](https://nodejs.org/)
+(This also installs npm automatically.)
 
 ---
 
-### 4. View / Search Patients
+### Step 2: Verify Node.js and npm installation
 
-- Displays all patient records with search and filter options.
-
-**Possible Improvements**
-
-- Add filters (admission date, disease, doctor)
-- Pagination for long lists
-- Export reports (PDF/Excel)
-
-**Benefits**
-
-- Quick access to patient data
-- Speeds up hospital workflow
+```bash
+node -v
+npm -v
+```
 
 ---
 
-## 🚀 Proposed Features
+### Step 3: Install Angular CLI globally
 
-1. **Edit / Delete Doctor** — Update or remove doctor records to keep data accurate.
-2. **Manage Special Categories** — Add and manage categories like Physiotherapists, Dentists, Dermatologists, etc.
-3. **Manage Patients** — Edit, delete, and view patient history for better tracking.
-4. **Search / Filter Doctors** — Add advanced filters by experience, operations performed, or department.
-5. **Employee Management** — Manage doctors, nurses, cleaners, and other staff with details like designation and salary.
-6. **Shift Management** — Assign and manage work shifts for all employees.
-7. **Doctor Appointment View** — Allow doctors to view appointments for specific dates.
-8. **Patient Appointment Booking & Email Notification** — Patients can book appointments online and receive confirmation emails.
-9. **Emergency Case Information** — Provide first-aid guidance and basic health tips.
+```bash
+npm install -g @angular/cli@17
+```
 
 ---
 
-## 🔮 Future Scope
+### Step 4: Clone the project repository
 
-Planned future enhancements include:
-
-- Billing and payment modules
-- Report generation
-- Role-based access control
-- Live chat with hospital staff
+```bash
+git clone https://github.com/SP2224/Hospital-Management-System.git
+```
 
 ---
 
-## 🌟 Advantages
+### Step 5: Navigate to the frontend project folder
 
-1. **Centralized Data Management** — All information in one place.
-2. **Improved Efficiency** — Automates repetitive tasks.
-3. **Easy Access to Information** — Accessible by doctors and staff anytime.
-4. **Better Patient Experience** — Online booking & notifications.
-5. **Enhanced Administration** — Employee and shift management.
-6. **Accurate Records** — Keeps information up-to-date.
-7. **Scalable Design** — Future modules can be added easily.
+```bash
+cd Hospital-Management-System/Hospital-Management-System-main/project_frontend
+```
 
 ---
 
-## ⚠️ Disadvantages
+### Step 6: Install project dependencies
 
-1. Initial setup cost and time
-2. Training requirements for hospital staff
-3. Data security concerns (sensitive health data)
-4. Dependence on internet and system uptime
-5. Need for regular maintenance and updates
-6. Possible human error during data entry
+```bash
+npm install
+```
 
 ---
 
-## 🛠️ Tech Stack
+### Step 7: Install Bootstrap
 
-- **Backend:** Spring Boot (Java)
-- **Frontend:** JavaFX / HTML / CSS (as applicable)
-- **Database:** MySQL / MariaDB
-- **Version Control:** Git & GitHub
+```bash
+npm install bootstrap
+```
 
----
-
-## 📘 How to Run
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/anojanpuveendhiranathan/Hospital-Management-System.git
-   ```
-
-2. Open the project in your IDE (IntelliJ IDEA, Eclipse, or VS Code).
-
-3. Configure **application.properties** with your MySQL database credentials.
-
-4. Run the Spring Boot application:
-
-   ```bash
-   mvn spring-boot:run
-   ```
-
-5. Access the system through the configured URL (e.g., `http://localhost:8080`).
+> Optional: You can also add Bootstrap in `angular.json` under the `styles` array if needed.
 
 ---
 
-## 👥 Contributors
+### Step 8: Install Angular build tools (if missing)
 
-- [Anojan Puveendhiranathan](https://github.com/anojanpuveendhiranathan)
-- (Add your team members here)
+```bash
+npm install
+```
 
 ---
 
-## 📄 License
+### Step 9: Start the Angular development server
 
-This project is open-source and available for educational and development use.
+```bash
+ng serve
+```
 
-> > > > > > > 6040248f253327f8b1607dc63d487bc66c943f52
+---
+
+### Step 10: Open the application in a browser
+
+Once the server starts, open your browser and go to:
+👉 [http://localhost:4200](http://localhost:4200)

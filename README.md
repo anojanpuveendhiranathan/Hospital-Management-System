@@ -148,7 +148,7 @@ Planned future enhancements include:
 4. Run the Spring Boot application:
 
    ```bash
-   mvn spring-boot:run
+   mvnw spring-boot:run
    ```
 
 5. Access the system through the configured URL (e.g., `http://localhost:8080`).
@@ -158,8 +158,9 @@ Planned future enhancements include:
 ## 👥 Contributors
 
 * [Anojan Puveendhiranathan](https://github.com/anojanpuveendhiranathan)
-* (Add your team members here)
-
+* [Bansari Mukeshbhai Sorathiya](https://github.com/bansari-sorathiya)
+* [Vidhyadhari Kummari](https://github.com/kummarividhyadhari-beep)
+* [Prudhvi Nadh Goud Sammeta](https://github.com/prudhvinadhgoud)
 ---
 
 ## 📄 License

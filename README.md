@@ -1,167 +1,123 @@
-# 🏥 Hospital Management System
+# 🏥 Hospital Management System — Backend Setup
 
-The **Hospital Management System (HMS)** is designed to digitalize hospital operations such as doctor management, patient registration, appointment scheduling, and staff coordination.
-It provides a centralized platform for administrators, doctors, and patients — improving **efficiency, transparency, and communication** within the hospital.
-
----
-
-## ⚙️ Current Features
-
-### 1. Add Doctor
-
-* Allows admins to register new doctors with details like name, specialization, contact, and experience.
-* Data is stored in the database for future retrieval or search.
-
-**Possible Improvements**
-
-* Add edit/delete options for doctor records
-* Validate inputs (avoid duplicate emails/phones)
-* Include profile photo and specialization field
-
-**Benefits**
-
-* Keeps doctor records organized
-* Simplifies onboarding of new doctors
+This guide provides step-by-step instructions to set up and run the **Spring Boot backend** of the Hospital Management System.
 
 ---
 
-### 2. View / Search Doctors
+## ⚙️ Prerequisites
 
-* Displays all registered doctors
-* Allows search by name or specialization
+Before running the project, make sure you have:
 
-**Possible Improvements**
+- **Java JDK 17 or higher**  
+- **MySQL Server** (running on port `3306`)  
 
-* Add filters (experience, category, operations)
-* Sorting and pagination for large data sets
-
-**Benefits**
-
-* Easy access to doctor details
-* Faster decision-making for admins/patients
+> 💡 You don’t need to install Maven — the project includes the **Maven Wrapper (`mvnw`)**.
 
 ---
 
-### 3. Add Patient
+## 🧩 Setup JAVA_HOME (if not already set)
 
-* Enables staff to register new patients with basic details like name, age, gender, and contact.
+### On Windows
 
-**Possible Improvements**
+1. Find your JDK installation path, for example:
+```
 
-* Add fields for disease, assigned doctor, and admission date
-* Prevent duplicate entries
-* Allow uploading reports or prescriptions
+C:\Program Files\Java\jdk-25
 
-**Benefits**
+````
 
-* Keeps patient data digital and accessible
-* Reduces paperwork and manual errors
+2. Open **Command Prompt (CMD)** and run:
+```cmd
+setx JAVA_HOME "C:\Program Files\Java\jdk-25"
+setx PATH "%JAVA_HOME%\bin;%PATH%"
+````
 
----
+3. Close and reopen CMD, then verify:
 
-### 4. View / Search Patients
+```cmd
+java -version
+```
 
-* Displays all patient records with search and filter options.
+### On Linux / macOS
 
-**Possible Improvements**
+Edit your terminal profile file (`~/.bashrc`, `~/.zshrc`, etc.) and add:
 
-* Add filters (admission date, disease, doctor)
-* Pagination for long lists
-* Export reports (PDF/Excel)
+```bash
+export JAVA_HOME=/usr/lib/jvm/jdk-25
+export PATH=$JAVA_HOME/bin:$PATH
+```
 
-**Benefits**
+Then run:
 
-* Quick access to patient data
-* Speeds up hospital workflow
-
----
-
-## 🚀 Proposed Features
-
-1. **Edit / Delete Doctor** — Update or remove doctor records to keep data accurate.
-2. **Manage Special Categories** — Add and manage categories like Physiotherapists, Dentists, Dermatologists, etc.
-3. **Manage Patients** — Edit, delete, and view patient history for better tracking.
-4. **Search / Filter Doctors** — Add advanced filters by experience, operations performed, or department.
-5. **Employee Management** — Manage doctors, nurses, cleaners, and other staff with details like designation and salary.
-6. **Shift Management** — Assign and manage work shifts for all employees.
-7. **Doctor Appointment View** — Allow doctors to view appointments for specific dates.
-8. **Patient Appointment Booking & Email Notification** — Patients can book appointments online and receive confirmation emails.
-9. **Emergency Case Information** — Provide first-aid guidance and basic health tips.
+```bash
+source ~/.bashrc
+java -version
+```
 
 ---
 
-## 🔮 Future Scope
+## 🗄️ Database Setup (MySQL)
 
-Planned future enhancements include:
+1. Open **MySQL Command Line** or **MySQL Workbench**.
+2. Create a new database:
 
-* Billing and payment modules
-* Report generation
-* Role-based access control
-* Live chat with hospital staff
-
----
-
-## 🌟 Advantages
-
-1. **Centralized Data Management** — All information in one place.
-2. **Improved Efficiency** — Automates repetitive tasks.
-3. **Easy Access to Information** — Accessible by doctors and staff anytime.
-4. **Better Patient Experience** — Online booking & notifications.
-5. **Enhanced Administration** — Employee and shift management.
-6. **Accurate Records** — Keeps information up-to-date.
-7. **Scalable Design** — Future modules can be added easily.
+```sql
+CREATE DATABASE hospital_management;
+```
 
 ---
 
-## ⚠️ Disadvantages
+## ⚙️ `application.properties`
 
-1. Initial setup cost and time
-2. Training requirements for hospital staff
-3. Data security concerns (sensitive health data)
-4. Dependence on internet and system uptime
-5. Need for regular maintenance and updates
-6. Possible human error during data entry
+Open `src/main/resources/application.properties` and add the following:
 
----
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/hospital_management?useSSL=false
+spring.datasource.username=root
+spring.datasource.password=root
 
-## 🛠️ Tech Stack
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 
-* **Backend:** Spring Boot (Java)
-* **Frontend:** JavaFX / HTML / CSS (as applicable)
-* **Database:** MySQL / MariaDB
-* **Version Control:** Git & GitHub
+server.port=8080
+```
 
----
-
-## 📘 How to Run
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/anojanpuveendhiranathan/Hospital-Management-System.git
-   ```
-
-2. Open the project in your IDE (IntelliJ IDEA, Eclipse, or VS Code).
-
-3. Configure **application.properties** with your MySQL database credentials.
-
-4. Run the Spring Boot application:
-
-   ```bash
-   mvn spring-boot:run
-   ```
-
-5. Access the system through the configured URL (e.g., `http://localhost:8080`).
+> 💡 Update the username and password according to your MySQL setup.
 
 ---
 
-## 👥 Contributors
+## ▶️ Run the Application
 
-* [Anojan Puveendhiranathan](https://github.com/anojanpuveendhiranathan)
-* (Add your team members here)
+### On Windows:
+
+```bash
+mvnw spring-boot:run
+```
+
+### On Linux / macOS:
+
+```bash
+./mvnw spring-boot:run
+```
+
+Once started, open your browser and visit:
+
+```
+http://localhost:8080
+```
 
 ---
 
-## 📄 License
+## ✅ Notes
 
-This project is open-source and available for educational and development use.
+* Ensure **MySQL** is running before starting the Spring Boot app.
+* Tables will be created automatically on startup.
+* To stop the application, press **Ctrl + C** in the terminal.
+
+```
+
+I can also **create a downloadable `README.md` file** from this so you can directly commit it to GitHub.  
+
+Do you want me to do that?
+```

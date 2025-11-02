@@ -117,7 +117,3 @@ http://localhost:8080
 
 ```
 
-I can also **create a downloadable `README.md` file** from this so you can directly commit it to GitHub.  
-
-Do you want me to do that?
-```

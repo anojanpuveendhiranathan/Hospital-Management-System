@@ -115,5 +115,3 @@ http://localhost:8080
 * Tables will be created automatically on startup.
 * To stop the application, press **Ctrl + C** in the terminal.
 
-```
-

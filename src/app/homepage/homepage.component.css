@@ -776,6 +776,16 @@ header span i {
 #appointment select {
   height: 45px;
 }
+#appointment input[type="radio"] {
+  height: auto !important;
+  width: auto !important;
+  margin-top: 14px; /* optional: helps vertical alignment */
+}
+#appointment input[type="radio"] + label {
+  margin-right: 20px; /* space after label */
+  margin-left: 4px;  /* small gap between radio and label */
+  vertical-align: middle;
+}
 
 #appointment button#cf-submit {
   background: #a5c422;

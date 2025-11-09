@@ -9,6 +9,7 @@ import { PatientlistsComponent } from './patientlists/patientlists.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
 import { RoughComponent } from './rough/rough.component';
 import { ShowdocinfoComponent } from './showdocinfo/showdocinfo.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 const routes: Routes = [
   {path:"doctors_info", component: DoctorlistsComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:"accesseverything", component: AccesseverythingComponent},
   {path:"showdocinfo",component: ShowdocinfoComponent},
   {path:"rough",component:RoughComponent},
-  {path:"presc",component:PrescriptionComponent}
+  {path:"presc",component:PrescriptionComponent},
+  {path:"admin/login",component:AdminLoginComponent}
 
 ];
 

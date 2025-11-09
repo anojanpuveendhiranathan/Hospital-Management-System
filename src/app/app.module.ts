@@ -23,6 +23,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { PrescriptionComponent } from './prescription/prescription.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PrescriptionComponent } from './prescription/prescription.component';
     AccesseverythingComponent,
     ShowdocinfoComponent,
     RoughComponent,
-    PrescriptionComponent
+    PrescriptionComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

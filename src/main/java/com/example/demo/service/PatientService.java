@@ -6,8 +6,8 @@ import com.example.demo.model.Patient;
 
 public interface PatientService {
     Patient createPatient(Patient patient);
-    Patient getPatientById(Integer id);
+    Patient getPatientById(Long id);
     List<Patient> getAllPatients();
-    Patient updatePatient(Integer id, Patient patient);
-    void deletePatient(Integer id);
+    Patient updatePatient(Long id, Patient patient);
+    void deletePatient(Long id);
 }

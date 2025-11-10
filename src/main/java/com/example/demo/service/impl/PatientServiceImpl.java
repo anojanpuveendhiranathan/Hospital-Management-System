@@ -21,7 +21,7 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	@Override
-	public Patient getPatientById(Integer id) {
+	public Patient getPatientById(Long id) {
 		return patientRepository.findById(id)
 				.orElseThrow(() -> new RuntimeException("Patient not found with ID: " + id));
 	}
@@ -32,28 +32,28 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	@Override
-	public Patient updatePatient(Integer id, Patient updatedPatient) {
-		Patient existingPatient = getPatientById(id);
+	public Patient updatePatient(Long id, Patient updatedPatient) {
+//		Patient existingPatient = getPatientById(id);
+//
+//		existingPatient.setFirstName(updatedPatient.getFirstName());
+//		existingPatient.setLastName(updatedPatient.getLastName());
+//		existingPatient.setDateOfBirth(updatedPatient.getDateOfBirth());
+//		existingPatient.setGender(updatedPatient.getGender());
+//		existingPatient.setContactNumber(updatedPatient.getContactNumber());
+//		existingPatient.setCity(updatedPatient.getCity());
+//		existingPatient.setBloodGroup(updatedPatient.getBloodGroup());
+//		existingPatient.setCurrentMedication(updatedPatient.getCurrentMedication());
+//		existingPatient.setDateOfAdmission(updatedPatient.getDateOfAdmission());
+//		existingPatient.setDateOfDischarge(updatedPatient.getDateOfDischarge());
+//		existingPatient.setBillingAmount(updatedPatient.getBillingAmount());
+//		existingPatient.setRoomNumber(updatedPatient.getRoomNumber());
+//		existingPatient.setEmergencyNumber(updatedPatient.getEmergencyNumber());
 
-		existingPatient.setFirstName(updatedPatient.getFirstName());
-		existingPatient.setLastName(updatedPatient.getLastName());
-		existingPatient.setDateOfBirth(updatedPatient.getDateOfBirth());
-		existingPatient.setGender(updatedPatient.getGender());
-		existingPatient.setContactNumber(updatedPatient.getContactNumber());
-		existingPatient.setCity(updatedPatient.getCity());
-		existingPatient.setBloodGroup(updatedPatient.getBloodGroup());
-		existingPatient.setCurrentMedication(updatedPatient.getCurrentMedication());
-		existingPatient.setDateOfAdmission(updatedPatient.getDateOfAdmission());
-		existingPatient.setDateOfDischarge(updatedPatient.getDateOfDischarge());
-		existingPatient.setBillingAmount(updatedPatient.getBillingAmount());
-		existingPatient.setRoomNumber(updatedPatient.getRoomNumber());
-		existingPatient.setEmergencyNumber(updatedPatient.getEmergencyNumber());
-
-		return patientRepository.save(existingPatient);
+		return updatedPatient;
 	}
 
 	@Override
-	public void deletePatient(Integer id) {
+	public void deletePatient(Long id) {
 		Patient patient = getPatientById(id);
 		patientRepository.delete(patient);
 	}

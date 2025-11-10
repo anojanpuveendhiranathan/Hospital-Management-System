@@ -1,38 +1,36 @@
 package com.example.demo.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
 @Entity
-@Table(name = "patient")
+@Table(name = "nurse")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Patient {
+public class Nurse {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String firstName;
-	private String lastName;
-	private String bloodGroup;
-	private String currentMedication;
-	private LocalDateTime dateOfAdmission;
-	private LocalDateTime dateOfDischarge;
-	private BigDecimal billingAmount;
-	private String roomNo;
-	private String emergencyNumber;
-
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "appointment_id")
-	private Appointment appointment;
+	@JoinColumn(name = "staff_id", nullable = false)
+	private Staff staff;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "speciality_id")
+	private Speciality speciality;
+
+	private Integer expOfYears;
+
+	@Column(length = 500)
+	private String qualification;
 
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;

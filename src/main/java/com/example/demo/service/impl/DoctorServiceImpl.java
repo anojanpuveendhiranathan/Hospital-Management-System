@@ -21,7 +21,7 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public Doctor getDoctorById(Integer id) {
+    public Doctor getDoctorById(Long id) {
         return doctorRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Doctor not found with ID: " + id));
     }
@@ -32,28 +32,28 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public Doctor updateDoctor(Integer id, Doctor updatedDoctor) {
-        Doctor existingDoctor = getDoctorById(id);
-
-        existingDoctor.setName(updatedDoctor.getName());
-        existingDoctor.setSpecialization(updatedDoctor.getSpecialization());
-        existingDoctor.setPatientsTreated(updatedDoctor.getPatientsTreated());
-        existingDoctor.setExperienceYears(updatedDoctor.getExperienceYears());
-        existingDoctor.setDateOfBirth(updatedDoctor.getDateOfBirth());
-        existingDoctor.setEmailId(updatedDoctor.getEmailId());
-        existingDoctor.setContactNumber(updatedDoctor.getContactNumber());
-        existingDoctor.setGender(updatedDoctor.getGender());
-        existingDoctor.setQualification(updatedDoctor.getQualification());
-        existingDoctor.setShiftTime(updatedDoctor.getShiftTime());
-        existingDoctor.setProfilePhoto(updatedDoctor.getProfilePhoto());
-        existingDoctor.setWorkStatus(updatedDoctor.getWorkStatus());
-
-        return doctorRepository.save(existingDoctor);
+    public Doctor updateDoctor(Long id, Doctor updatedDoctor) {
+//        Doctor existingDoctor = getDoctorById(id);
+//
+//        existingDoctor.setName(updatedDoctor.getName());
+//        existingDoctor.setSpecialization(updatedDoctor.getSpecialization());
+//        existingDoctor.setPatientsTreated(updatedDoctor.getPatientsTreated());
+//        existingDoctor.setExperienceYears(updatedDoctor.getExperienceYears());
+//        existingDoctor.setDateOfBirth(updatedDoctor.getDateOfBirth());
+//        existingDoctor.setEmailId(updatedDoctor.getEmailId());
+//        existingDoctor.setContactNumber(updatedDoctor.getContactNumber());
+//        existingDoctor.setGender(updatedDoctor.getGender());
+//        existingDoctor.setQualification(updatedDoctor.getQualification());
+//        existingDoctor.setShiftTime(updatedDoctor.getShiftTime());
+//        existingDoctor.setProfilePhoto(updatedDoctor.getProfilePhoto());
+//        existingDoctor.setWorkStatus(updatedDoctor.getWorkStatus());
+//
+        return updatedDoctor;
     }
 
     @Override
-    public void deleteDoctor(Integer id) {
-        Doctor doctor = getDoctorById(id);
-        doctorRepository.delete(doctor);
+    public void deleteDoctor(Long id) {
+//        Doctor doctor = getDoctorById(id);
+//        doctorRepository.delete(doctor);
     }
 }

@@ -33,7 +33,7 @@ public class PatientController {
 
 	// Get Patient by ID
 	@GetMapping("/{id}")
-	public ResponseEntity<Patient> getPatientById(@PathVariable Integer id) {
+	public ResponseEntity<Patient> getPatientById(@PathVariable Long id) {
 		Patient patient = patientService.getPatientById(id);
 		return ResponseEntity.ok(patient);
 	}
@@ -47,14 +47,14 @@ public class PatientController {
 
 	// Update Patient
 	@PutMapping("/{id}")
-	public ResponseEntity<Patient> updatePatient(@PathVariable Integer id, @RequestBody Patient patient) {
+	public ResponseEntity<Patient> updatePatient(@PathVariable Long id, @RequestBody Patient patient) {
 		Patient updatedPatient = patientService.updatePatient(id, patient);
 		return ResponseEntity.ok(updatedPatient);
 	}
 
 	// Delete Patient
 	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deletePatient(@PathVariable Integer id) {
+	public ResponseEntity<String> deletePatient(@PathVariable Long id) {
 		patientService.deletePatient(id);
 		return ResponseEntity.ok("Patient with ID " + id + " deleted successfully.");
 	}

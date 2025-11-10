@@ -1,40 +1,43 @@
-
 <div class="main-container">
-    <div class="container">
-      <div class="form-wrapper" id="formWrapper">
-        <h2 id="formTitle">Login</h2>
-        <form id="">
-          <!-- <div class="form-field">
-            <input type="text" id="username" required />
-            <label>Username</label>
-          </div> -->
-    
-          <!-- Email only visible in signup -->
-          <div class="form-field">
-            <input type="email" id="email" name="email" required />
-            <label>Email</label>
-          </div>
-    
+  <div class="container">
+    <div class="form-wrapper" id="formWrapper">
+      <h2 id="formTitle">Login</h2>
+
+      <form #loginForm="ngForm" (ngSubmit)="onLogin()">
         <div class="form-field">
-            <input type="password" id="password" name="password" required />
-            <label>Password</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            required
+          />
+          <label>Email</label>
         </div>
-    
-          <div class="toggle-group">
-            <label class="switch">
-              <input type="checkbox" id="rememberMe" />
-              <span class="slider"></span>
-            </label>
-            <span>Remember me</span>
-          </div>
-    
-          <button type="submit" id="submitBtn">Login</button>
-    
-          <!-- <p class="switch-text">
-            Don’t have an account?
-            <a href="#" id="toggleForm">Sign up</a>
-          </p> -->
-        </form>
-      </div>
+
+        <div class="form-field">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+          />
+          <label>Password</label>
+        </div>
+
+        <div class="toggle-group">
+          <label class="switch">
+            <input type="checkbox" id="rememberMe" />
+            <span class="slider"></span>
+          </label>
+          <span>Remember me</span>
+        </div>
+
+        <button type="submit" id="submitBtn">Login</button>
+
+        <p class="message">{{ message }}</p>
+      </form>
     </div>
+  </div>
 </div>

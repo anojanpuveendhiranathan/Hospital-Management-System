@@ -58,7 +58,7 @@
                         </div>
                     </div>
 
-                    <!-- <form>
+                    <!-- <table>
                         <div class="row mt-2">
                             <div class="col-6">
                                 <div class="mb-3">
@@ -150,7 +150,7 @@
                         <div class="float-end mt-3">
                             <button type="submit" class="btn btn-success">Add Doctor</button>
                         </div>
-                    </form> -->
+                    </table> -->
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -165,7 +165,7 @@
                                     <th scope="row">1</th>
                                     <td>Dentist</td>
                                     <td>
-                                        <button class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i></button>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editSpecialityID"><i class="bi bi-pencil-fill"></i></button> <!-- TO OPEN MODAL FOR SPECIFIC RECORDS, APPEND ID IN DATA-BS-TARGET -->
                                         <button class="btn btn-outline-danger ms-2"><i class="bi bi-trash-fill"></i></button>
                                     </td>
                                 </tr>
@@ -190,6 +190,30 @@
                     </div>
                 </div>
 
+                <!-- EDIT SPECIALITY MODAL -->
+                     <div class="modal fade" id="editSpecialityID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit Speciality</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <label for="" class="form-label">Speciality</label>
+                                        <input type="text" name="" class="form-control" placeholder="Dentist" id=""> <!-- Record as a value so admin can see what he is gonna edit  -->
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Edit changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
         <!-- Content End -->

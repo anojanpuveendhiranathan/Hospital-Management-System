@@ -1,0 +1,104 @@
+<div class="container-xxl position-relative bg-white d-flex p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Sidebar Start -->
+    <app-sidebar></app-sidebar>
+    <!-- Sidebar End -->
+
+
+    <!-- Content Start -->
+    <div class="content">
+
+        <!-- Navbar Start -->
+        <app-navbar></app-navbar>
+        <!-- Navbar End -->
+
+        <!-- Content Start -->
+        <div class="container-fluid pt-4 px-4">
+            <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
+
+                <div class="bg-light rounded h-100 p-4">
+                    <div class="d-inline-block w-100">
+                        <h6 class="mb-4 d-inline">Doctors</h6>
+                        <h6 class="mb-4 d-inline float-end">
+                            <a role="button" href="/admin/dashboard/add-doctor" class="btn btn-outline-success"> Add Doctor </a>
+                        </h6>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Contact No</th>
+                                    <th scope="col">Speciality</th>
+                                    <th scope="col">Shift time</th>
+                                    <th scope="col">Experience</th>
+                                    <th scope="col">Patient treated</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>John</td>
+                                    <td>Doe</td>
+                                    <td>jhon@email.com</td>
+                                    <td>USA</td>
+                                    <td>123</td>
+                                    <td>Member</td>
+                                    <td>Member</td>
+                                    <td>
+                                        <button class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i></button>
+                                        <button class="btn btn-outline-danger ms-2"><i class="bi bi-trash-fill"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>mark@email.com</td>
+                                    <td>UK</td>
+                                    <td>456</td>
+                                    <td>Member</td>
+                                    <td>Member</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>jacob@email.com</td>
+                                    <td>AU</td>
+                                    <td>789</td>
+                                    <td>Member</td>
+                                    <td>Member</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Footer Start -->
+        <app-footer></app-footer>
+        <!-- Footer End -->
+    </div>
+    <!-- Content End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</div>

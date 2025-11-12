@@ -10,6 +10,12 @@ import { PrescriptionComponent } from './prescription/prescription.component';
 import { RoughComponent } from './rough/rough.component';
 import { ShowdocinfoComponent } from './showdocinfo/showdocinfo.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { DoctorComponent } from './admin/doctor/doctor.component';
+import { AddDoctorComponent } from './admin/add-doctor/add-doctor.component';
+import { NurseComponent } from './admin/nurse/nurse.component';
+import { AddNurseComponent } from './admin/add-nurse/add-nurse.component';
+import { SpecialityComponent } from './admin/speciality/speciality.component';
 
 const routes: Routes = [
   {path:"doctors_info", component: DoctorlistsComponent},
@@ -21,8 +27,13 @@ const routes: Routes = [
   {path:"showdocinfo",component: ShowdocinfoComponent},
   {path:"rough",component:RoughComponent},
   {path:"presc",component:PrescriptionComponent},
-  {path:"admin/login",component:AdminLoginComponent}
-
+  {path:"admin/login",component:AdminLoginComponent},
+  {path:"admin/dashboard",component:DashboardComponent},
+  {path:"admin/dashboard/doctor",component:DoctorComponent},
+  {path:"admin/dashboard/add-doctor",component:AddDoctorComponent},
+  {path:"admin/dashboard/nurse",component:NurseComponent},
+  {path:"admin/dashboard/add-nurse",component:AddNurseComponent},
+  {path:"admin/dashboard/speciality",component:SpecialityComponent},
 ];
 
 @NgModule({

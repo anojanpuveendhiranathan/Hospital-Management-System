@@ -23,7 +23,16 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PrescriptionComponent } from './prescription/prescription.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component'
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { NavbarComponent } from './admin/navbar/navbar.component';
+import { FooterComponent } from './admin/footer/footer.component';
+import { DoctorComponent } from './admin/doctor/doctor.component';
+import { NurseComponent } from './admin/nurse/nurse.component';
+import { AddDoctorComponent } from './admin/add-doctor/add-doctor.component';
+import { AddNurseComponent } from './admin/add-nurse/add-nurse.component';
+import { SpecialityComponent } from './admin/speciality/speciality.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +47,15 @@ import { AdminLoginComponent } from './admin-login/admin-login.component'
     RoughComponent,
     PrescriptionComponent,
     AdminLoginComponent,
+    SidebarComponent,
+    DashboardComponent,
+    NavbarComponent,
+    FooterComponent,
+    DoctorComponent,
+    NurseComponent,
+    AddDoctorComponent,
+    AddNurseComponent,
+    SpecialityComponent,
   ],
   imports: [
     BrowserModule,

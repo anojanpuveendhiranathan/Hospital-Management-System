@@ -1,231 +1,185 @@
 <div class="container-xxl position-relative bg-white d-flex p-0">
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+  <!-- Spinner Start -->
+  <div
+    id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+  >
+    <div
+      class="spinner-border text-primary"
+      style="width: 3rem; height: 3rem"
+      role="status"
+    >
+      <span class="sr-only">Loading...</span>
     </div>
-    <!-- Spinner End -->
+  </div>
+  <!-- Spinner End -->
 
+  <!-- Sidebar Start -->
+  <app-sidebar></app-sidebar>
+  <!-- Sidebar End -->
 
-    <!-- Sidebar Start -->
-    <app-sidebar></app-sidebar>
-    <!-- Sidebar End -->
-
+  <!-- Content Start -->
+  <div class="content">
+    <!-- Navbar Start -->
+    <app-navbar></app-navbar>
+    <!-- Navbar End -->
 
     <!-- Content Start -->
-    <div class="content">
+    <div class="container-fluid pt-4 px-4">
+      <div
+        class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0"
+      >
+        <div class="bg-light rounded h-100 p-4">
+          <div class="d-inline-block w-100 mb-3">
+            <h6 class="d-inline">Specialities</h6>
+            <button
+              type="button"
+              class="btn btn-outline-success float-end"
+              data-bs-toggle="modal"
+              data-bs-target="#addSpeciality"
+            >
+              Add Speciality
+            </button>
+          </div>
 
-        <!-- Navbar Start -->
-        <app-navbar></app-navbar>
-        <!-- Navbar End -->
-
-        <!-- Content Start -->
-        <div class="container-fluid pt-4 px-4">
-            <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
-
-                <div class="bg-light rounded h-100 p-4">
-                    <div class="d-inline-block w-100">
-                        <h6 class="mb-4 d-inline">Specialities</h6>
-                        <h6 class="mb-4 d-inline float-end">
-                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addSpeciality"> Add Speciality </button>
-                        </h6>
-                    </div>
-
-                    <!-- ADD SPECIALITY MODAL -->
-                    <div class="modal fade" id="addSpeciality" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add Speciality</h5>
-                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="">
-                                        <label for="" class="form-label">Speciality</label>
-                                        <input type="text" name="" class="form-control" placeholder="Dentist" id="">
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- <table>
-                        <div class="row mt-2">
-                            <div class="col-6">
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" placeholder="John Dow" id="">
-                                </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                                <label for="" class="form-label">Speciality</label>
-                                <select class="form-select" name="speciality" id="">
-                                    <option selected disabled value="">Select Speciality</option>
-                                    <option value="">Dentist</option>
-                                    <option value="">Physiotherapist</option>
-                                    <option value="">Cardiologic</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" placeholder="johndoe@gmail.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            </div>
-                            <div class="col-6">
-                                <label for="" class="form-label">Contact Number</label>
-                                <input type="text" placeholder="1234432112" name="contact_no" id="" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="col-12 mb-3">
-                            <label for="" class="form-label">Qualification</label>
-                            <textarea name="" class="form-control" placeholder="B.D.M.S" id=""></textarea>
-                        </div>
-                        
-
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <label class="form-label" class="form-label">Shift Start Time</label>
-                                <input type="time" name="shift_start" class="form-control" id="">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label" class="form-label">Shift End Time</label>
-                                <input type="time" name="shift_end" class="form-control" id="">
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-4">
-                                <label class="form-label">Experience in years</label>
-                                <input type="text" name="exp" class="form-control" placeholder="1" id="">
-                            </div>
-                            <div class="col-4">
-                                <label for="" class="form-label">Patient Treated</label>
-                                <input type="number" name="" class="form-control" placeholder="10" id="">
-                            </div>
-                            <div class="col-4">
-                                <label for="" class="form-label">Work Status</label>
-                                <select class="form-select" name="work-status" id="">
-                                    <option selected disabled value="">Select Work Status</option>
-                                    <option value="">Full Time</option>
-                                    <option value="">PartTime</option>
-                                    <option value="">Permanent</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <label for="" class="form-check ps-0">Gender</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input"checked type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">
-                                    <label class="form-check-label" for="inlineRadio1">Male</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">
-                                    <label class="form-check-label" for="inlineRadio2">Female</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="other">
-                                    <label class="form-check-label" for="inlineRadio3">Other</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <label for="" class="form-label">Date of Birth</label>
-                                <input type="date" name="dob" class="form-control" id="">
-                            </div>
-                        </div>
-
-                        <div class="float-end mt-3">
-                            <button type="submit" class="btn btn-success">Add Doctor</button>
-                        </div>
-                    </table> -->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Speciality</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Dentist</td>
-                                    <td>
-                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editSpecialityID"><i class="bi bi-pencil-fill"></i></button> <!-- TO OPEN MODAL FOR SPECIFIC RECORDS, APPEND ID IN DATA-BS-TARGET -->
-                                        <button class="btn btn-outline-danger ms-2"><i class="bi bi-trash-fill"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Physiotherapist</td>
-                                    <td>
-                                        <button class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i></button>
-                                        <button class="btn btn-outline-danger ms-2"><i class="bi bi-trash-fill"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Member</td>
-                                    <td>
-                                        <button class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i></button>
-                                        <button class="btn btn-outline-danger ms-2"><i class="bi bi-trash-fill"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+          <!-- ================= ADD SPECIALITY MODAL ================= -->
+          <div
+            class="modal fade"
+            id="addSpeciality"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Add Speciality</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
                 </div>
-
-                <!-- EDIT SPECIALITY MODAL -->
-                     <div class="modal fade" id="editSpecialityID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Edit Speciality</h5>
-                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="">
-                                        <label for="" class="form-label">Speciality</label>
-                                        <input type="text" name="" class="form-control" placeholder="Dentist" id=""> <!-- Record as a value so admin can see what he is gonna edit  -->
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Edit changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-body">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Dentist"
+                    [(ngModel)]="newSpeciality"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="onAdd()"
+                    data-bs-dismiss="modal"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- ================= TABLE ================= -->
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Speciality</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let s of specialities; index as i">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ s.name }}</td>
+                  <td>
+                    <button
+                      class="btn btn-outline-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#editSpecialityID"
+                      (click)="onEdit(s)"
+                    >
+                      <i class="bi bi-pencil-fill"></i>
+                    </button>
+                    <button
+                      class="btn btn-outline-danger ms-2"
+                      (click)="onDelete(s.id!)"
+                    >
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ================= EDIT SPECIALITY MODAL ================= -->
+          <div
+            class="modal fade"
+            id="editSpecialityID"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Edit Speciality</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="editSpecialityValue"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="onUpdate()"
+                    data-bs-dismiss="modal"
+                  >
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Content End -->
-
-
-        <!-- Footer Start -->
-        <app-footer></app-footer>
-        <!-- Footer End -->
+      </div>
     </div>
     <!-- Content End -->
 
+    <!-- Footer Start -->
+    <app-footer></app-footer>
+    <!-- Footer End -->
+  </div>
+  <!-- Content End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+    ><i class="bi bi-arrow-up"></i
+  ></a>
 </div>

@@ -1,140 +1,214 @@
 <div class="container-xxl position-relative bg-white d-flex p-0">
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+  <!-- Spinner Start -->
+  <div
+    id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+  >
+    <div
+      class="spinner-border text-primary"
+      style="width: 3rem; height: 3rem"
+      role="status"
+    >
+      <span class="sr-only">Loading...</span>
     </div>
-    <!-- Spinner End -->
+  </div>
+  <!-- Spinner End -->
 
+  <!-- Sidebar Start -->
+  <app-sidebar></app-sidebar>
+  <!-- Sidebar End -->
 
-    <!-- Sidebar Start -->
-    <app-sidebar></app-sidebar>
-    <!-- Sidebar End -->
-
+  <!-- Content Start -->
+  <div class="content">
+    <!-- Navbar Start -->
+    <app-navbar></app-navbar>
+    <!-- Navbar End -->
 
     <!-- Content Start -->
-    <div class="content">
-
-        <!-- Navbar Start -->
-        <app-navbar></app-navbar>
-        <!-- Navbar End -->
-
-        <!-- Content Start -->
-        <div class="container-fluid pt-4 px-4">
-            <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
-
-                <div class="bg-light rounded h-100 p-4">
-                    <h6 class="mb-4 d-inline">Add Doctor</h6>
-                    <form>
-                        <div class="row mt-2">
-                            <div class="col-6">
-                                <div class="mb-3">
-                                    <label for="" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" placeholder="John Dow" id="">
-                                </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                                <label for="" class="form-label">Speciality</label>
-                                <select class="form-select" name="speciality" id="">
-                                    <option selected disabled value="">Select Speciality</option>
-                                    <option value="">Dentist</option>
-                                    <option value="">Physiotherapist</option>
-                                    <option value="">Cardiologic</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" placeholder="johndoe@gmail.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            </div>
-                            <div class="col-6">
-                                <label for="" class="form-label">Contact Number</label>
-                                <input type="text" placeholder="1234432112" name="contact_no" id="" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="col-12 mb-3">
-                            <label for="" class="form-label">Qualification</label>
-                            <textarea name="" class="form-control" placeholder="B.D.M.S" id=""></textarea>
-                        </div>
-                        
-
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <label class="form-label" class="form-label">Shift Start Time</label>
-                                <input type="time" name="shift_start" class="form-control" id="">
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label" class="form-label">Shift End Time</label>
-                                <input type="time" name="shift_end" class="form-control" id="">
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-4">
-                                <label class="form-label">Experience in years</label>
-                                <input type="text" name="exp" class="form-control" placeholder="1" id="">
-                            </div>
-                            <div class="col-4">
-                                <label for="" class="form-label">Patient Treated</label>
-                                <input type="number" name="" class="form-control" placeholder="10" id="">
-                            </div>
-                            <div class="col-4">
-                                <label for="" class="form-label">Work Status</label>
-                                <select class="form-select" name="work-status" id="">
-                                    <option selected disabled value="">Select Work Status</option>
-                                    <option value="">Full Time</option>
-                                    <option value="">PartTime</option>
-                                    <option value="">Permanent</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <label for="" class="form-check ps-0">Gender</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input"checked type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">
-                                    <label class="form-check-label" for="inlineRadio1">Male</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">
-                                    <label class="form-check-label" for="inlineRadio2">Female</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="other">
-                                    <label class="form-check-label" for="inlineRadio3">Other</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <label for="" class="form-label">Date of Birth</label>
-                                <input type="date" name="dob" class="form-control" id="">
-                            </div>
-                        </div>
-
-                        <div class="float-end mt-3">
-                            <button type="submit" class="btn btn-success">Add Doctor</button>
-                        </div>
-                    </form>
+    <div class="container-fluid pt-4 px-4">
+      <div
+        class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0"
+      >
+        <div class="bg-light rounded h-100 p-4">
+          <h6 class="mb-4 d-inline">Add Doctor</h6>
+          <form (ngSubmit)="addDoctor()">
+            <div class="row mt-2">
+              <div class="col-6">
+                <div class="mb-3">
+                  <label class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="doctor.name"
+                    name="name"
+                  />
                 </div>
-
-
+              </div>
+              <div class="col-6 mb-3">
+                <label class="form-label">Speciality</label>
+                <select
+                  class="form-select"
+                  name="specialityId"
+                  [(ngModel)]="doctor.specialityId"
+                >
+                  <option selected disabled value="">Select Speciality</option>
+                  <option *ngFor="let s of specialities" [value]="s.id">
+                    {{ s.name }}
+                  </option>
+                </select>
+              </div>
             </div>
+
+            <div class="row mb-3">
+              <div class="col-6">
+                <label class="form-label">Email address</label>
+                <input
+                  type="email"
+                  placeholder="johndoe@gmail.com"
+                  class="form-control"
+                  [(ngModel)]="doctor.email"
+                  name="email"
+                />
+              </div>
+              <div class="col-6">
+                <label class="form-label">Contact Number</label>
+                <input
+                  type="text"
+                  placeholder="1234432112"
+                  class="form-control"
+                  [(ngModel)]="doctor.contactNo"
+                  name="contactNo"
+                />
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+              <label class="form-label">Qualification</label>
+              <textarea
+                class="form-control"
+                placeholder="B.D.M.S"
+                [(ngModel)]="doctor.qualification"
+                name="qualification"
+              ></textarea>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-6">
+                <label class="form-label">Shift Start Time</label>
+                <input
+                  type="time"
+                  class="form-control"
+                  [(ngModel)]="doctor.shiftStart"
+                  name="shiftStart"
+                />
+              </div>
+              <div class="col-6">
+                <label class="form-label">Shift End Time</label>
+                <input
+                  type="time"
+                  class="form-control"
+                  [(ngModel)]="doctor.shiftEnd"
+                  name="shiftEnd"
+                />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-4">
+                <label class="form-label">Experience in years</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  [(ngModel)]="doctor.expOfYears"
+                  name="experience"
+                />
+              </div>
+              <div class="col-4">
+                <label class="form-label">Patients Treated</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  [(ngModel)]="doctor.patientsTreated"
+                  name="patientsTreated"
+                />
+              </div>
+              <div class="col-4">
+                <label class="form-label">Work Status</label>
+                <select
+                  class="form-select"
+                  [(ngModel)]="doctor.workStatus"
+                  name="workStatus"
+                >
+                  <option value="FULLTIME">Full Time</option>
+                  <option value="PARTTIME">Part Time</option>
+                  <option value="PERMANENT">Permanent</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-6">
+                <label class="form-label">Gender</label>
+                <select
+                  class="form-select"
+                  [(ngModel)]="doctor.gender"
+                  name="gender"
+                >
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                  <option value="O">Other</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label class="form-label">Date of Birth</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  [(ngModel)]="doctor.dob"
+                  name="dob"
+                />
+              </div>
+            </div>
+
+            <div class="float-end mt-3">
+              <button type="submit" class="btn btn-success">Add Doctor</button>
+            </div>
+          </form>
         </div>
-        <!-- Content End -->
-
-
-        <!-- Footer Start -->
-        <app-footer></app-footer>
-        <!-- Footer End -->
+      </div>
     </div>
     <!-- Content End -->
 
+    <!-- Footer Start -->
+    <app-footer></app-footer>
+    <!-- Footer End -->
+  </div>
+  <!-- Content End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+    ><i class="bi bi-arrow-up"></i
+  ></a>
+</div>
+
+<!-- Success Toast -->
+<div
+  class="position-fixed top-0 end-0 p-3"
+  style="z-index: 1055"
+  *ngIf="showToast"
+>
+  <div
+    class="toast show align-items-center text-bg-success custom-toast-success border-0"
+  >
+    <div class="d-flex">
+      <div class="toast-body">
+        {{ toastMessage }}
+      </div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        (click)="hideToast()"
+      ></button>
+    </div>
+  </div>
 </div>

@@ -11,28 +11,60 @@ export class AdminLoginComponent {
   email: string = '';
   password: string = '';
   message: string = '';
+  showPopup: boolean = false; // <-- added for popup
 
   constructor(private adminService: AdminService, private router: Router) {}
 
   onLogin(): void {
     if (!this.email || !this.password) {
-      this.message = 'Please enter both email and password.';
+      this.showPopupMessage('Please enter both email and password.');
       return;
     }
 
     this.adminService.login(this.email, this.password).subscribe({
       next: (response) => {
-        this.message = response;
-        if (response.includes('successful')) {
-          // store login info locally if needed
+        //this.showSuccess(response.message);
+
+        if (response.status === 'success') {
+          this.showSuccess(response.message);
           localStorage.setItem('adminEmail', this.email);
-          // redirect to dashboard
-          this.router.navigate(['/']);
+          localStorage.setItem('adminName', response.fullName);
+          // this.router.navigate(['/admin/dashboard']);
         }
       },
       error: (err) => {
-        this.message = err.error || 'Invalid email or password.';
+        this.showPopupMessage(
+          err.error.message || 'Invalid email or password.'
+        );
       },
     });
+  }
+
+  // <-- popup helper
+  showPopupMessage(msg: string) {
+    this.message = msg;
+    this.showPopup = true;
+  }
+
+  // <-- close popup
+  closePopup() {
+    this.showPopup = false;
+  }
+
+  showToast = false;
+  toastMessage = '';
+
+  showSuccess(message: string) {
+    this.toastMessage = message;
+    this.showToast = true;
+
+    // Auto-hide after 3 seconds
+    setTimeout(() => {
+      this.router.navigate(['/admin/dashboard']);
+    }, 1500);
+  }
+
+  hideToast() {
+    this.showToast = false;
   }
 }

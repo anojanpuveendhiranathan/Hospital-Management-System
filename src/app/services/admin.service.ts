@@ -14,10 +14,6 @@ export class AdminService {
     const params = new HttpParams()
       .set('email', email)
       .set('password', password);
-    return this.http.post(
-      `${this.baseUrl}/login`,
-      {},
-      { params, responseType: 'text' }
-    );
+    return this.http.post(`${this.baseUrl}/login`, {}, { params });
   }
 }

@@ -1,6 +1,6 @@
 .main-container {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #e0e5ec;
   height: 100vh;
   display: flex;
@@ -41,8 +41,7 @@
   margin-bottom: 20px;
   border-radius: 12px;
   background: #ecf0f3;
-  box-shadow: inset 5px 5px 10px #a3b1c6,
-              inset -5px -5px 10px #ffffff;
+  box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #ffffff;
   padding: 14px 16px;
   transition: box-shadow 0.3s ease;
 }
@@ -88,8 +87,7 @@ button {
   color: white;
   font-weight: bold;
   font-size: 16px;
-  box-shadow: 5px 5px 10px #a3b1c6,
-              -5px -5px 10px #ffffff;
+  box-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #ffffff;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 }
@@ -174,4 +172,83 @@ input:checked + .slider:before {
 
 .hidden {
   display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 250px;
+}
+
+.popup-content button {
+  margin-top: 10px;
+  padding: 6px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+
+/* Container → top-right fixed */
+.custom-toast-container {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 2000;
+}
+
+/* Toast box */
+.custom-toast {
+  background-color: #28a745; /* GREEN */
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Close button */
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

@@ -1,5 +1,5 @@
 // src/app/components/homepage/homepage.component.ts
-import { Component, OnInit, OnDestroy,Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 import { DoctorService } from '../../app/services/doctor.service';
 import { AppointmentService } from '../../app/services/appointment.service';
 
@@ -38,7 +38,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.doctorService.getDoctors().subscribe(
+    this.doctorService.getAllDoctors().subscribe(
       (res) => {
         this.doctors = res;
       },
@@ -71,7 +71,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
     document.head.appendChild(this.tooplateStyle);
   }
 
-   ngOnDestroy() {
+  ngOnDestroy() {
     if (this.bootstrapLink) {
       document.head.removeChild(this.bootstrapLink); // ✅ remove when leaving dashboard
     }

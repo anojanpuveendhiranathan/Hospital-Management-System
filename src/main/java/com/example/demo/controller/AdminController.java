@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +28,20 @@ public class AdminController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestParam String email, @RequestParam String password) {
         Optional<Admin> admin = adminService.login(email, password);
+
         if (admin.isPresent()) {
-            return ResponseEntity.ok("✅ Login successful for " + admin.get().getFullName());
+            Map<String, Object> response = new HashMap<>();
+            response.put("status", "success");
+            response.put("fullName", admin.get().getFullName());
+            response.put("message", "Login successful");
+
+            return ResponseEntity.ok(response);
         } else {
-            return ResponseEntity.status(401).body("❌ Invalid email or password");
+            Map<String, Object> response = new HashMap<>();
+            response.put("status", "error");
+            response.put("message", "Invalid email or password");
+
+            return ResponseEntity.status(401).body(response);
         }
     }
 

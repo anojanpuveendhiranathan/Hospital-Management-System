@@ -2,37 +2,70 @@ package com.example.demo.service.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.example.demo.dto.DoctorDTO;
 import com.example.demo.model.Doctor;
+import com.example.demo.model.Speciality;
+import com.example.demo.model.Staff;
 import com.example.demo.repository.DoctorRepository;
+import com.example.demo.repository.SpecialityRepository;
+import com.example.demo.repository.StaffRepository;
 import com.example.demo.service.DoctorService;
 
 @Service
 public class DoctorServiceImpl implements DoctorService {
 
-    @Autowired
-    private DoctorRepository doctorRepository;
+	private DoctorRepository doctorRepository;
+	private final StaffRepository staffRepository;
+	private final SpecialityRepository specialityRepository;
 
-    @Override
-    public Doctor createDoctor(Doctor doctor) {
-        return doctorRepository.save(doctor);
-    }
+	public DoctorServiceImpl(StaffRepository staffRepository, SpecialityRepository specialityRepository,
+			DoctorRepository doctorRepository) {
+		this.staffRepository = staffRepository;
+		this.specialityRepository = specialityRepository;
+		this.doctorRepository = doctorRepository;
+	}
 
-    @Override
-    public Doctor getDoctorById(Long id) {
-        return doctorRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Doctor not found with ID: " + id));
-    }
+	@Override
+	@Transactional
+	public Doctor addDoctor(DoctorDTO doctorDTO) {
 
-    @Override
-    public List<Doctor> getAllDoctors() {
-        return doctorRepository.findAll();
-    }
+		// 1️ Create staff entity
+		Staff staff = Staff.builder().name(doctorDTO.getName()).dob(doctorDTO.getDob()).email(doctorDTO.getEmail())
+				.contactNo(doctorDTO.getContactNo()).gender(Staff.Gender.valueOf(doctorDTO.getGender()))
+				.shiftTime(doctorDTO.getShiftTime()).workStatus(Staff.WorkStatus.valueOf(doctorDTO.getWorkStatus()))
+				.build();
+		staffRepository.save(staff);
 
-    @Override
-    public Doctor updateDoctor(Long id, Doctor updatedDoctor) {
+		// 2️ Fetch speciality if provided
+		Speciality speciality = null;
+		if (doctorDTO.getSpecialityId() != null) {
+			speciality = specialityRepository.findById(doctorDTO.getSpecialityId())
+					.orElseThrow(() -> new RuntimeException("Speciality not found"));
+		}
+
+		// 3️ Create doctor entity
+		Doctor doctor = Doctor.builder().staff(staff).speciality(speciality)
+				.patientsTreated(doctorDTO.getPatientsTreated()).expOfYears(doctorDTO.getExpOfYears())
+				.qualification(doctorDTO.getQualification()).build();
+
+		return doctorRepository.save(doctor);
+	}
+
+	@Override
+	public Doctor getDoctorById(Long id) {
+		return doctorRepository.findById(id).orElseThrow(() -> new RuntimeException("Doctor not found with ID: " + id));
+	}
+
+	@Override
+	public List<Doctor> getAllDoctors() {
+		return doctorRepository.findAll();
+	}
+
+	@Override
+	public Doctor updateDoctor(Long id, Doctor updatedDoctor) {
 //        Doctor existingDoctor = getDoctorById(id);
 //
 //        existingDoctor.setName(updatedDoctor.getName());
@@ -48,12 +81,15 @@ public class DoctorServiceImpl implements DoctorService {
 //        existingDoctor.setProfilePhoto(updatedDoctor.getProfilePhoto());
 //        existingDoctor.setWorkStatus(updatedDoctor.getWorkStatus());
 //
-        return updatedDoctor;
-    }
+		return updatedDoctor;
+	}
 
-    @Override
-    public void deleteDoctor(Long id) {
-//        Doctor doctor = getDoctorById(id);
-//        doctorRepository.delete(doctor);
-    }
+	@Override
+	@Transactional
+	public void deleteByEmail(String email) {
+	    Doctor doctor = doctorRepository.findByStaffEmail(email)
+	            .orElseThrow(() -> new RuntimeException("Doctor not found with email: " + email));
+	    doctorRepository.delete(doctor); // staff will also be removed
+	}
+
 }

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.dto.DoctorDTO;
 import com.example.demo.model.Doctor;
 import com.example.demo.service.DoctorService;
 
@@ -26,8 +28,8 @@ public class DoctorController {
 
 	// Create Doctor
 	@PostMapping
-	public ResponseEntity<Doctor> createDoctor(@RequestBody Doctor doctor) {
-		Doctor savedDoctor = doctorService.createDoctor(doctor);
+	public ResponseEntity<Doctor> createDoctor(@RequestBody DoctorDTO doctorDTO) {
+		Doctor savedDoctor = doctorService.addDoctor(doctorDTO);
 		return ResponseEntity.ok(savedDoctor);
 	}
 
@@ -52,10 +54,9 @@ public class DoctorController {
 		return ResponseEntity.ok(updatedDoctor);
 	}
 
-	// Delete Doctor
-	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteDoctor(@PathVariable Long id) {
-		doctorService.deleteDoctor(id);
-		return ResponseEntity.ok("Doctor with ID " + id + " deleted successfully.");
+	@DeleteMapping("/email/{email}")
+	public ResponseEntity<Void> deleteDoctorByEmail(@PathVariable String email) {
+	    doctorService.deleteByEmail(email);
+	    return ResponseEntity.noContent().build();
 	}
 }

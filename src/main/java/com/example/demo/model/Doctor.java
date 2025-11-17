@@ -16,9 +16,10 @@ public class Doctor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "staff_id", nullable = false)
 	private Staff staff;
+
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "speciality_id")

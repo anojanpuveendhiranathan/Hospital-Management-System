@@ -19,13 +19,15 @@ public class Nurse {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "staff_id", nullable = false)
 	private Staff staff;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "speciality_id")
 	private Speciality speciality;
+
 
 	private Integer expOfYears;
 

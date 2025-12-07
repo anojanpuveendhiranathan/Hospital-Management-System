@@ -17,6 +17,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -50,7 +52,8 @@ public class Appointment {
 	private LocalDate appointmentDatetime;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "doctor_id")
+    @JoinColumn(name = "doctor_id")
+    @JsonIgnore // ignore during JSON serialization
 	private Doctor doctor;
 
 	private LocalDateTime createdAt;

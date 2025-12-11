@@ -102,12 +102,14 @@ export class SpecialityComponent implements OnInit, OnDestroy {
     this.scriptElement.async = true;
     document.body.appendChild(this.scriptElement);
 
+    // Popper (required by Bootstrap)
     this.popperScript = this.renderer.createElement('script');
     this.popperScript.src =
       'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js';
     this.popperScript.defer = true;
     document.body.appendChild(this.popperScript);
 
+    // Bootstrap JS (depends on Popper)
     this.bootstrapScript = this.renderer.createElement('script');
     this.bootstrapScript.src =
       'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js';

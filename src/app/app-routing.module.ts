@@ -16,6 +16,12 @@ import { AddDoctorComponent } from './admin/add-doctor/add-doctor.component';
 import { NurseComponent } from './admin/nurse/nurse.component';
 import { AddNurseComponent } from './admin/add-nurse/add-nurse.component';
 import { SpecialityComponent } from './admin/speciality/speciality.component';
+import { AdminFpwdComponent } from './admin-fpwd/admin-fpwd.component';
+import { HealthConditionComponent } from './admin/health-condition/health-condition.component';
+import { SymptomsComponent } from './admin/symptoms/symptoms.component';
+import { DosComponent } from './admin/dos/dos.component';
+import { CausesComponent } from './admin/causes/causes.component';
+import { MedicineComponent } from './admin/medicine/medicine.component';
 
 const routes: Routes = [
   {path:"doctors_info", component: DoctorlistsComponent},
@@ -34,6 +40,12 @@ const routes: Routes = [
   {path:"admin/dashboard/nurse",component:NurseComponent},
   {path:"admin/dashboard/add-nurse",component:AddNurseComponent},
   {path:"admin/dashboard/speciality",component:SpecialityComponent},
+  {path: "admin/forgot-password",component:AdminFpwdComponent},
+  {path: "admin/health-condition",component:HealthConditionComponent},
+  {path: "admin/symptoms",component:SymptomsComponent},
+  {path: "admin/do-dont",component:DosComponent},
+  {path:"admin/causes",component:CausesComponent},
+  {path: "admin/medicine", component:MedicineComponent},
 ];
 
 @NgModule({

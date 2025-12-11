@@ -61,12 +61,46 @@
         <i class="fa fa-briefcase me-2"></i>Specialities
       </a>
 
-      <a href="#" class="nav-item nav-link"
+      <!-- <a href="#" class="nav-item nav-link"
         ><i class="fa fa-keyboard me-2"></i>Appointments</a
-      >
+      > -->
       <a href="#" class="nav-item nav-link"
-        ><i class="fa fa-address-book me-2"></i>Pateints</a
-      >
+        ><i class="fa fa-address-book me-2"></i>Pateints</a>
+        <a href="/admin/health-condition" 
+               routerLink="/admin/health-condition" 
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }" 
+               class="nav-item nav-link">
+               <i class="fa fa-address-book me-2"></i>Health Condition
+            </a>
+            <a href="/admin/symptoms" 
+               routerLink="/admin/symptoms" 
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }" 
+               class="nav-item nav-link">
+               <i class="fa fa-address-book me-2"></i>Symptoms
+            </a>
+            <a href="/admin/do-dont" 
+               routerLink="/admin/do-dont" 
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }" 
+               class="nav-item nav-link">
+               <i class="fa fa-address-book me-2"></i>Do's-Don't
+            </a>
+            <a href="/admin/causes" 
+               routerLink="/admin/causes" 
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }" 
+               class="nav-item nav-link">
+               <i class="fa fa-address-book me-2"></i>Causes
+            </a>
+            <a href="/admin/medicine" 
+               routerLink="/admin/medicine" 
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }" 
+               class="nav-item nav-link">
+               <i class="fa fa-address-book me-2"></i>Medicine
+            </a>
       <a href="" class="nav-item nav-link"
         ><i class="fa fa-arrow-right me-2"></i>Log Out</a
       >

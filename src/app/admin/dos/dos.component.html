@@ -1,0 +1,143 @@
+<div class="container-xxl position-relative bg-white d-flex p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Sidebar Start -->
+    <app-sidebar></app-sidebar>
+    <!-- Sidebar End -->
+
+
+    <!-- Content Start -->
+    <div class="content">
+
+        <!-- Navbar Start -->
+        <app-navbar></app-navbar>
+        <!-- Navbar End -->
+
+
+        <!-- Content Start -->
+        <div class="container-fluid pt-4 px-4">
+            <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
+
+                <div class="bg-light rounded h-100 p-4">
+                    <div class="d-inline-block w-100">
+                        <h6 class="mb-4 d-inline">Do's & Don't</h6>
+                        <h6 class="mb-4 d-inline float-end">
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addDosDont">Add Do's-Don't</button>
+                        </h6>
+                    </div>
+
+                    <!-- ADD DOS DONT MODAL -->
+                    <div class="modal fade" id="addDosDont" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add Do's & Don't</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <select name="" class="form-select" id="">
+                                            <option selected disabled value="">Select Health Condition</option>
+                                            <option value="cold">Cold</option>
+                                            <option value="flew">Flew</option>
+                                        </select>
+                                        <label for="" class="form-label">Do's</label>
+                                        <div id="editor1"></div>
+                                        <label for="" class="form-label">Don't</label>
+                                        <div id="editor2"></div>
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Health Condition</th>
+                                    <th scope="col">Do's</th>
+                                    <th scope="col">Don't</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Cold</td>
+                                    <td>dsfsfdsfsdfdfdsf</td>
+                                    <td>dsfsfdsfsdfdfdsf</td>
+                                    <td>
+                                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editDosDont"><i class="bi bi-pencil-fill"></i></button> <!-- TO OPEN MODAL FOR SPECIFIC RECORDS, APPEND ID IN DATA-BS-TARGET -->
+                                        <button class="btn btn-outline-danger ms-2"><i class="bi bi-trash-fill"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- EDIT DOS DONT MODAL -->
+                     <div class="modal fade" id="editDosDont" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit Health Condition</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <select name="" class="form-select" id="">
+                                            <option selected disabled value="">Select Health Condition</option>
+                                            <option value="cold">Cold</option>
+                                            <option value="flew">Flew</option>
+                                        </select>
+                                        <label for="" class="form-label">Do's</label>
+                                        <div id="editor3"></div>
+                                        <label for="" class="form-label">Don't</label>
+                                        <div id="editor4"></div>
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Edit changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Footer Start -->
+        <app-footer></app-footer>
+        <!-- Footer End -->
+    </div>
+    <!-- Content End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</div>

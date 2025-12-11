@@ -1,0 +1,173 @@
+<div class="container-xxl position-relative bg-white d-flex p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Sidebar Start -->
+    <app-sidebar></app-sidebar>
+    <!-- Sidebar End -->
+
+
+    <!-- Content Start -->
+    <div class="content">
+
+        <!-- Navbar Start -->
+        <app-navbar></app-navbar>
+        <!-- Navbar End -->
+
+
+        <!-- Content Start -->
+        <div class="container-fluid pt-4 px-4">
+            <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
+
+                <div class="bg-light rounded h-100 p-4">
+                    <div class="d-inline-block w-100">
+                        <h6 class="mb-4 d-inline">Medicines</h6>
+                        <h6 class="mb-4 d-inline float-end">
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addMedicine">Add Medicine</button>
+                        </h6>
+                    </div>
+
+                    <!-- ADD MEDICINE MODAL -->
+                    <div class="modal fade" id="addMedicine" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add Medicine</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <label for="" class="form-label">Medicine Name</label>
+                                        <input type="text" name="" class="form-control mb-2" placeholder="Paracetomol" id="">
+
+                                        <label for="" class="form-label">Symptoms</label>
+                                        <div id="editor1"></div>
+
+                                        <label for="" class="form-label">About</label>
+                                        <div id="editor2"></div>
+
+                                        <label for="" class="form-label">Who can take it?</label>
+                                        <div id="editor3"></div>
+
+                                        <label for="" class="form-label">Who cannot take it?</label>
+                                        <div id="editor4"></div>
+
+                                        <label for="" class="form-label">How and when to take it?</label>
+                                        <div id="editor5"></div>
+
+                                        <label for="" class="form-label">Side Effects</label>
+                                        <div id="editor6"></div>
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Medicine</th>
+                                    <th scope="col">About</th>
+                                    <th scope="col">Who can?</th>
+                                    <th scope="col">Who cannot?</th>
+                                    <th>How & when to take?</th>
+                                    <th>Side Effects</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Paracetamol</td>
+                                    <td>Paracetamol is a common painkiller used to treat aches and pain. It can also be used to reduce a high temperature.</td>
+                                    <td>Most people aged 16 and over can take paracetamol. You can also take it if you are pregnant or breastfeeding.</td>
+                                    <td>Paracetamol is not suitable for some people. To make sure it's safe for you, tell your doctor or pharmacist if you..</td>
+                                    <td>The usual dose for adults is either 500mg or 1g.</td>
+                                    <td>Paracetamol very rarely causes side effects if you take it at the right dosage.</td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editMedicineId"><i class="bi bi-pencil-fill"></i></button> <!-- TO OPEN MODAL FOR SPECIFIC RECORDS, APPEND ID IN DATA-BS-TARGET -->
+                                            <button class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- EDIT MEDICINE MODAL -->
+                     <div class="modal fade" id="editMedicineId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit Health Condition</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <label for="" class="form-label">Medicine Name</label>
+                                        <input type="text" name="" class="form-control mb-2" placeholder="Paracetomol" id="">
+
+                                        <label for="" class="form-label">Symptoms</label>
+                                        <div id="editor7"></div>
+
+                                        <label for="" class="form-label">About</label>
+                                        <div id="editor8"></div>
+
+                                        <label for="" class="form-label">Who can take it?</label>
+                                        <div id="editor9"></div>
+
+                                        <label for="" class="form-label">Who cannot take it?</label>
+                                        <div id="editor10"></div>
+
+                                        <label for="" class="form-label">How and when to take it?</label>
+                                        <div id="editor11"></div>
+
+                                        <label for="" class="form-label">Side Effects</label>
+                                        <div id="editor12"></div>
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Edit changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Footer Start -->
+        <app-footer></app-footer>
+        <!-- Footer End -->
+    </div>
+    <!-- Content End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</div>
